@@ -37,7 +37,16 @@ public class DefaultMethodInterfaceTest
       DefaultMethodInterface defMethIface = ()->{
 	  System.out.println("Performance from anonymous object.");
       };
+      // will print "Default Performance"
+      // -> unimplemented `default` method
       defMethIface.perform();
+      // will print "Performance from anonymous object"
       defMethIface.performanceKudunga();
+      
+      DefaultMethodInterface defMethIfaceImpl = new DefaultMethodInterfaceImpl();
+      // will print "Implemented perform"
+      defMethIfaceImpl.perform();
+      // will print "Implemented performanceKudunga"
+      defMethIfaceImpl.performanceKudunga();
     }
 }
